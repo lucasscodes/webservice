@@ -41,7 +41,7 @@ html, body {
             appearance: none;
             width: 100%; /* Full-width */
             height: 10px; /* Specified height */
-            background: #d3d3d3; /* Grey background */
+            background: #d3d3d3; /* White background */
             outline: none; /* Remove outline */
             opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
             -webkit-transition: .2s; /* 0.2 seconds transition on hover */

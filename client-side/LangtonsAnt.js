@@ -9,7 +9,7 @@ let ants = [[height/2, width/2, 0, "Green"],
 			[height/2, width/2, 3, "Blue"]
 		   ];
 //init field with background color
-const background = "#F0FFF0";
+const background = "#FFFFFF";
 let field = new Array(height);
 for(let i=0; i<height; i++){
 	field[i] = new Array(width);
@@ -57,13 +57,14 @@ function step() {
 
 function main() {
 	let title = document.getElementById("title");
+
 	// use server-side js
-	// client.js
-	fetch('http://127.0.0.1:3000/name')
+	fetch('http://127.0.0.1:3000/name', {
+		method: 'GET',
+		headers: {'x-auth-token':'valid'}})
 	.then(response => response.text())
 	.then(name => {
-	title.value = name;  // Outputs the name returned by the server
-	})
+		title.value = name;})
 	.catch(error => title.value = "Server not responding...");
 
 	let slider = document.getElementById("simRate");

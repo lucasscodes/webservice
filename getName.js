@@ -1,4 +1,4 @@
 module.exports = function getName() {
-    // Your code here
+    // Server-Side execution
     return 'Server+Client: Langtons Ant';
   };
