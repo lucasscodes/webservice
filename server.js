@@ -12,10 +12,12 @@ app.get('/name', (req, res) => {
     //Is this a random request or from/like the client file? 
     //(This method is only usable for low security information, easy to bypass and read!)
     if (req.headers['x-auth-token']==='valid') { //is the hardcoded token!
-        res.send(getName()); // Call server-side function
+      getName(req.headers['number'], function(str) { //get from/into cache
+        res.send(str); //provide to client
+      });
     }  
-    else { //is a request without the token!
-        //the html access error on a fitting page 
+    else { //a request missing the token!
+        //html access error on a fitting page 
         //(btw 418 is the BEST html error!!!)
         return res.status(403).sendFile(path.join(__dirname, './403.html'));
     }
