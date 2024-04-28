@@ -37,7 +37,7 @@ module.exports = function getName(n, callback) {
         res = fetch(n);
         //Query to insert PrimaryKey+Value pair
         const sql = `INSERT INTO namen (Zahl, Name)
-                     VALUES (${n},'"${res}"');`;
+                     VALUES (${n},'"${res}"');`; //btw unsafe, sql injections!
         //Try to upload or silently ignore failure
         con.query(sql, function (err,_) {
           if (err) {
