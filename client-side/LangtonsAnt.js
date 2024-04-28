@@ -58,7 +58,7 @@ function step() {
 function main() {
 	let title = document.getElementById("title");
 
-	// use server-side getName.js => getName(1) gets cached on DB!
+	// use server-side getName.js => getName(parameter) gets cached on DB!
 	fetch('http://127.0.0.1:3000/name', {
 		method: 'GET',
 		headers: {'x-auth-token':'valid', //authenticate as valid request (LOW SECURITY!!!)
