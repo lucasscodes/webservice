@@ -65,8 +65,8 @@ function main() {
 				  'number':0}}) //parameter for cached function
 	.then(response => response.text())
 	.then(name => {
-		title.value = name;})
-	.catch(error => title.value = "Server not responding...");
+		title.value = name;}) //use result locally
+	.catch(error => title.value = "Server not responding..."); //fallback result
 
 	let slider = document.getElementById("simRate");
 	slider.value = rate;
