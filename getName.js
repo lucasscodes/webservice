@@ -53,10 +53,10 @@ module.exports = function getName(n, callback) {
       con.end(function(err) {
         if (err) throw err;
       });
-      //TODO: Only open connection if last one is dead
-      //Try to do this on the server, open connetion and auto reopen there
-      //If right now not running, use fallback
-      //This gets connections one layer up!
+      //TODO: Only open connection if last one is dead, from server.js
+      //Try to do this on the server, open connection and auto reopen there
+      //Pass down connection and evaluate there for error => fallback to expensive
+      //Or use db for insert/retrieve answere
     });
   });
 };
